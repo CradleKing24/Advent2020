@@ -12,4 +12,4 @@ def check_opcode(code, index_f, index_l):
     elif code == 2:
         return multiply_opcodes(index_f, index_l)
     else:
-        exit(99)
+        pass
