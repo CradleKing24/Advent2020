@@ -25,7 +25,7 @@ def loop_input(data_in):
 
 
 if __name__ == '__main__':
-    data_input = reader.return_reader_lines("./resources/day1.csv")
+    data_input = reader.return_reader_lines("./resources/twenty_twenty/day1.csv")
     data_input = [int(i) for i in data_input]
     answer = loop_input_part_2(data_input)
     print(answer)
