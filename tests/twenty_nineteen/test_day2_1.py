@@ -1,5 +1,5 @@
 from unittest import TestCase
-from src.day2 import day2
+from src.twenty_nineteen.day2 import day2
 
 
 class TestDay1(TestCase):
