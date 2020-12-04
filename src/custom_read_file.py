@@ -16,6 +16,13 @@ def return_reader_lines(file_name):
     return data_list
 
 
+def return_data_day4(file_name):
+    data = open(file_name, mode="r")
+    data_list = data.readlines()
+    data.close()
+    return data_list
+
+
 def return_reader_dictionary(file_name):
     with open(file_name, mode="r") as csv_file:
         reader = csv.DictReader(csv_file)
