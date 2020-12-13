@@ -1,8 +1,9 @@
 import re
 
+
 def check_range(value, low, high):
     if_value_passed = False
-    if low <= value <= high:
+    if low <= int(value) <= high:
         if_value_passed = True
     return if_value_passed
 

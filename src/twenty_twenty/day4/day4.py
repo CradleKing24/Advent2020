@@ -104,11 +104,11 @@ def run_part_2(data):
                     criteria_count += 1
             if each_attribute.find("ecl") > -1:
                 attribute_val = each_attribute.split(":")
-                if valid.check_eye_color(attribute_val):
+                if valid.check_eye_color(attribute_val[1]):
                     criteria_count += 1
             if each_attribute.find("pid") > -1:
                 attribute_val = each_attribute.split(":")
-                if valid.check_pass_id(attribute_val):
+                if valid.check_pass_id(attribute_val[1]):
                     criteria_count += 1
         if criteria_count == 7:
             valid_ports += 1
@@ -116,6 +116,6 @@ def run_part_2(data):
 
 
 if __name__ == '__main__':
-    total = run_part_1(get_day_input())
-    #total.append(run_part_2(get_day_input(), 1, 1))
+    #total = run_part_1(get_day_input())
+    total = run_part_2(get_day_input())
     print(total)
