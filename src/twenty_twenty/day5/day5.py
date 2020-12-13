@@ -92,9 +92,5 @@ if __name__ == '__main__':
     #total = run_part_1(get_day_input())
     total = run_part_2(get_day_input())
     total.sort()
-    all_seats = list(range(32, 849))
-    # for element in total:
-    #     if element not in all_seats:
-    #         print(element)
     print(total)
     print(max(total))
