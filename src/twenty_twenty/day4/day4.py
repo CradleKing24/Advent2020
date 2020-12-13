@@ -8,37 +8,8 @@ def get_day_input():
     return data
 
 
-def sanitize_data(data):
-    count = 0
-    clean_batch_data = []
-    data_start_length = len(data)
-
-    while count < data_start_length:
-        pass_port = ""
-        try:
-            delimit_loc = data.index("\n")
-        except ValueError:
-            print("No more delimits found")
-            count_temp = 0
-            while count_temp < len(data):
-                pass_port += data[count_temp].rstrip("\n") + " "
-                count_temp += 1
-            clean_batch_data.append(pass_port)
-            break
-        count_temp = 0
-        while count_temp < delimit_loc:
-            pass_port += data[0].rstrip("\n") + " "
-            data.pop(0)
-            count_temp += 1
-        if data[0] == "\n":
-            data.pop(0)
-        clean_batch_data.append(pass_port)
-        count += 1
-    return clean_batch_data
-
-
 def run_part_1(data):
-    clean_input = sanitize_data(data)
+    clean_input = data
 
     valid_ports = 0
 
@@ -74,7 +45,7 @@ def check_regex(regex, value):
 
 
 def run_part_2(data):
-    clean_input = sanitize_data(data)
+    clean_input = data
 
     valid_ports = 0
 
