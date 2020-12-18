@@ -38,27 +38,30 @@ def run_part_1(data):
 
 
 def run_part_2(data):
-    gold_bag_has_bags = []
     prev_bags = 0
     done = False
-    for bags in data:
+    map_of_bags = {}
+    map_of_all_bag_indecies = {}
+    for i, bags in enumerate(data):
+        bags = bags.replace(".", "").replace("bags", "bag")
         if bags.find("shiny gold bag") == 0:
-            #this is the gold bag
+            #this is the gold bag, get all bags after current
             init_bags = bags[bags.find("contain")+len("contain "):]
-            bag_count = init_bags.split(" ", 1)
-            bag_count[1] = bag_count[1].replace("bags", "bag")
-            gold_bag_has_bags.append(bags)
+            bag_count = init_bags.split(",")
+            for each_bag in bag_count:
+                num_of_bag = each_bag.split(" ", 1)
+                map_of_bags.update({num_of_bag[1]: num_of_bag[0]})
+        else:
+            #loop through all rules 1 time and get index for all the bag rules attempt as efficiency..
+            first_bag_rule = bags[:bags.find("contain")]
+            map_of_all_bag_indecies.update({first_bag_rule: i})
 
-    print(gold_bag_has_bags)
+    print(map_of_all_bag_indecies)
+    print(map_of_bags)
     return 0
 
 
 if __name__ == '__main__':
     total = run_part_1(get_day_input())
     # total = run_part_2(get_day_input())
-    # total.sort()
-    # all_seats = list(range(32, 849))
-    # for element in total:
-    #     if element not in all_seats:
-    #         print(element)
     print(total)
